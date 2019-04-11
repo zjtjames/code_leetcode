@@ -1,0 +1,7 @@
+#idea file
+.idea/
+/idea/
+*.xml
+*.ipr
+*.iml
+*.iws
