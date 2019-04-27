@@ -7,7 +7,7 @@ import base.TreeNode;
 /**
  * 树的最大深度
  */
-public class maxDepth {
+public class MaxDepth {
     public int maxDepth(TreeNode root) {
         if(root == null){
             return 0;
