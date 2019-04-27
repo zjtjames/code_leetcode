@@ -4,6 +4,9 @@ import base.TreeNode;
  * created by Zheng Jiateng on 2019/4/27.
  */
 
+/**
+ * 树的最大深度
+ */
 public class maxDepth {
     public int maxDepth(TreeNode root) {
         if(root == null){
