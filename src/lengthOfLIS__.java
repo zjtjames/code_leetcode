@@ -2,10 +2,12 @@
  * created by Zheng Jiateng on 2019/4/27.
  */
 
+import java.util.Arrays;
+
 /**
  * 最长增长序列 300. Longest Increasing Subsequence
  */
-public class lengthOfLIS {
+public class lengthOfLIS__ {
     /**
      * dp o(n2) dp[i]表示包含nums[i]元素的最长增长子序列的长度
      */
@@ -30,8 +32,29 @@ public class lengthOfLIS {
         return maxResult;
     }
 
-    public static void main(String[] args) {
-        int[] a = {2,3,4,1,5};
-        lengthOfLIS(a);
+    /**
+     * dp + bs
+     */
+    public static int lengthOfLIS_nlogn(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, num);
+            if (i < 0) {
+                // 算出来的i为第一个比它大的数的位置 也是它应该被插入的位置
+                i = -(i + 1);
+            }
+            dp[i] = num;
+            if (i == len) {
+                len++;
+            }
+        }
+        return len;
     }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3};
+        System.out.println(Arrays.binarySearch(a, 0, 0,2));
+    }
+
 }

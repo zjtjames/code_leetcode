@@ -5,7 +5,7 @@ import base.TreeNode;
  */
 
 /**
- * 树的最大深度 #104 Maximum Depth of Binary Tree
+ * 树的最大深度 104.Maximum Depth of Binary Tree
  */
 public class MaxDepth {
     public int maxDepth(TreeNode root) {
