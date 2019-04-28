@@ -35,6 +35,23 @@ public class lengthOfLIS__ {
     /**
      * dp + bs
      * 更小的数有更高的优先级 可以覆盖更大的数
+     * 0 8 6 12 2 3 4 5
+     * 0
+     * 0 8
+     * 0 6
+     * 0 6 12
+     * 0 2 12
+     * 0 2 3
+     * 0 2 3 4
+     * 0 2 3 4 5
+     *
+     * 0 8 4 12 2 3
+     * 0
+     * 0 8
+     * 0 4
+     * 0 4 12
+     * 0 2 12 此时虽然不是一个LIS 但是不影响结果 即len
+     * 0 2 3  0 2 3的优先级高于 0 4 12
      */
     public static int lengthOfLIS_nlogn(int[] nums) {
         int[] dp = new int[nums.length];
@@ -42,7 +59,7 @@ public class lengthOfLIS__ {
         for (int num : nums) {
             int i = Arrays.binarySearch(dp, 0, len, num);
             if (i < 0) {
-                // 算出来的i为第一个比它大的数的位置 也是它应该被插入的位置
+                // 算出来的i为第一个比它大的数的位置 也是它应该被插入的位置 如果key比a中所有元素都大，则返回toIndex 此函数的toIndex是exclusive的
                 i = -(i + 1);
             }
             dp[i] = num;
