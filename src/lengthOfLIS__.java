@@ -34,6 +34,7 @@ public class lengthOfLIS__ {
 
     /**
      * dp + bs
+     * 更小的数有更高的优先级 可以覆盖更大的数
      */
     public static int lengthOfLIS_nlogn(int[] nums) {
         int[] dp = new int[nums.length];
