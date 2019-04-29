@@ -6,7 +6,7 @@
  * 62. Unique Paths
  * 动态规划：任意格子的走法等于它上边格子的走法和左边格子的走法之和
  */
-public class UniquePaths {
+public class UniquePaths__ {
     public int uniquePaths(int m, int n) {
         if(m<1 || n<1){
             return 0;
