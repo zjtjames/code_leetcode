@@ -4,6 +4,8 @@
 
 /**
  * 自定义的开平方根 69. Sqrt(x)
+ *
+ * 二分查找的变形
  */
 
 public class MySqrt__ {
