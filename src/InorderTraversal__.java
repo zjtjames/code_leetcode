@@ -12,7 +12,7 @@ import java.util.Stack;
  * 二叉树中序遍历的循环写法 94. Binary Tree Inorder Traversal
  * 核心是使用栈
  */
-public class InorderTraversal {
+public class InorderTraversal__ {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
