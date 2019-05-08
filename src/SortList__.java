@@ -9,7 +9,7 @@ import base.ListNode;
  * 自底向上循环归并排序适合链表排序。
 
  */
-public class SortList {
+public class SortList__ {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
