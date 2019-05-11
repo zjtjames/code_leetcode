@@ -21,10 +21,10 @@ public class Subsets {
 
     private void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums, int start){
         result.add(new ArrayList(tempList));
-        for(int i = start; i < nums.length; i++){
+        for(int i = start; i < nums.length; i++){ // 这个for循环是精髓
             tempList.add(nums[i]);
             backtrack(result, tempList, nums, i + 1);
-            tempList.remove(tempList.size() - 1);
+            tempList.remove(tempList.size() - 1); // 在这一步进行回溯
         }
 
     }
