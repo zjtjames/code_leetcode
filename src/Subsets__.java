@@ -7,11 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 子集 78. Subsets
+ * 子集 78. Subsets__
  *
  * 回溯法(backtracking)的典型题
  */
-public class Subsets {
+public class Subsets__ {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);

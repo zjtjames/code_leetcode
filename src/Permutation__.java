@@ -14,7 +14,7 @@ import java.util.List;
  *
  * 回溯法(backtracking)的典型题
  */
-public class Permutation {
+public class Permutation__ {
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums); // 不必要
