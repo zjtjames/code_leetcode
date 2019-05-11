@@ -26,6 +26,5 @@ public class Subsets__ {
             backtrack(result, tempList, nums, i + 1);
             tempList.remove(tempList.size() - 1); // 在这一步进行回溯
         }
-
     }
 }
