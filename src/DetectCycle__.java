@@ -9,7 +9,7 @@ import base.ListNode;
  *
  * 弗洛伊德判圈法
  */
-public class DetectCycle {
+public class DetectCycle__ {
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode quick = head;
