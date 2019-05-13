@@ -9,10 +9,10 @@ import base.TreeNode;
  *
  * 中序遍历
  */
-public class KthSmallest {
+public class KthSmallestInBST {
 
     private int result;
-    private int count;
+    private int count; // 全局变量一定要定义为实例变量
 
     public int kthSmallest(TreeNode root, int k) {
         inorder(root, k);
