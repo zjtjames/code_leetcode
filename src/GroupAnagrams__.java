@@ -14,8 +14,9 @@ import java.util.List;
  * [["ate","eat","tea"], ["nat","tan"], ["bat"]]
  *
  * 能在一组的一定是26个字母频次相同的   把26个字母频次转换为String作为map的key
+ * 此题重点学习语法
  */
-public class GroupAnagrams {
+public class GroupAnagrams__ {
 
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs.length == 0){
