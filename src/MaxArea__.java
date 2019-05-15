@@ -7,7 +7,7 @@
  *
  * 双指针法，当单指针遍历时间复杂度太高时，想一想双指针法有没有奇效
  */
-public class MaxArea {
+public class MaxArea__ {
     public int maxArea(int[] height) {
         // 双指针法
         int left = 0;
