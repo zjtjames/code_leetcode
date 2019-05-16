@@ -1,4 +1,4 @@
-/**
+package backtrack; /**
  * created by Zheng Jiateng on 2019/5/9.
  */
 
@@ -12,7 +12,7 @@ import java.util.List;
  * Input: [1,2,3]
  * Output: [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
  *
- * 回溯法(backtracking)的典型题
+ * 回溯法(backtracking)的典型题 注意深复制
  */
 public class Permutation__ {
     public static List<List<Integer>> permute(int[] nums) {
@@ -24,15 +24,15 @@ public class Permutation__ {
 
     private static void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
-            result.add(new ArrayList<>(tempList)); // 深复制
+            result.add(new ArrayList<>(tempList)); // 万分注意 此处一定要用深复制 否则因为回溯 temp的元素都被删掉了 最后result里全是空list
         } else {
             for (int i = 0; i < nums.length; i++) {
                 if (tempList.contains(nums[i])) {
                     continue; // 元素已经包含 跳过
                 }
                 tempList.add(nums[i]);
-                backtrack(result, tempList, nums); // 因为for循环的存在 每次回溯可以把下一位的可能的结果都包括上
-                tempList.remove(tempList.size() - 1); // 这一位的这个数字所有情况罗列完后 删除这一位的这个数字 进入for循环的下一个数字
+                backtrack(result, tempList, nums); // 通过递归，把当前位是这个数字的所有情况都罗列完 然后回溯，即删掉当前位，进入for循环的下一个数字
+                tempList.remove(tempList.size() - 1); // 这一位是当前数字的所有情况罗列完后 删除这一位的这个数字 进入for循环的下一个数字
             }
         }
     }
