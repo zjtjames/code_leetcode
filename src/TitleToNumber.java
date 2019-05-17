@@ -21,13 +21,13 @@ public class TitleToNumber {
         char[] chars = s.toCharArray();
         int len = s.length();// 一定要注意 字符串的length方法加括号
         double result = 0.0;
-        for(int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             result += numberOfChar(chars[i]) * Math.pow(26, len - i - 1);
         }
-        return (int)result;
+        return (int) result;
     }
 
-    private int numberOfChar(char c){
+    private int numberOfChar(char c) {
         return c - 'A' + 1;
     }
 }
