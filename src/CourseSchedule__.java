@@ -9,8 +9,12 @@ import java.util.*;
 
 /**
  * 207. Course Schedule
+ * 思路：有向图判断是否有环：拓扑排序法
+ * 拓扑排序算法：选择一个入度为0的顶点并输出之；从网中删除此顶点及所有出边。
+ * 循环结束后，若输出的顶点数小于网中的顶点数，则输出“有回路”信息，否则输出的顶点序列就是一种拓扑序列。
+ * 为了避免重复检测入度为0的顶点，可另设一个队列暂存所有入度为0的顶点
  */
-public class CourseSchedule {
+public class CourseSchedule__ {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // 先根据边列表建图 邻接表 邻接矩阵均可
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
