@@ -12,7 +12,7 @@ import java.util.Comparator;
  * 然后遍历 当新来的interval的起点大于merged中最后一个interval的终点时，二者不重叠，merged加入新interval
  * 否则 二者重叠 merged中最后一个interval的终点更新为二者终点之间较大者
  */
-public class MergeInterval {
+public class MergeInterval__ {
     public int[][] merge(int[][] intervals) {
         if (intervals.length < 1) return intervals;
         Arrays.sort(intervals, new Comparator<int[]>() {
