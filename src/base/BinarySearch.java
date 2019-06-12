@@ -8,23 +8,31 @@ package base;
  */
 public class BinarySearch {
 
-    public static int bs(int[] arrays, int target, int lo, int hi) {
-        while (lo <= hi) {
-            int mid = (lo + hi) / 2;
-            if (arrays[mid] == target) {
-                return mid;
-            }
-            if (arrays[mid] > target) {
-                return bs(arrays, target, lo, mid - 1);
-            } else {
-                return bs(arrays, target, mid + 1, hi);
-            }
-        }
-        return -1;
+//    public static int bs(int[] arrays, int target, int lo, int hi) {
+//        while (lo <= hi) {
+//            int mid = (lo + hi) / 2;
+//            if (arrays[mid] == target) {
+//                return mid;
+//            }
+//            if (arrays[mid] > target) {
+//                return bs(arrays, target, lo, mid - 1);
+//            } else {
+//                return bs(arrays, target, mid + 1, hi);
+//            }
+//        }
+//        return -1;
+//    }
+
+    public static int binarySearch(int[] nums, int lo, int hi, int target){
+        if(lo > hi) return -1;
+        int mid = (lo + hi) / 2;
+        if(nums[mid] == target) return mid;
+        else if(nums[mid] > target) return binarySearch(nums, lo, mid - 1, target);
+        else return binarySearch(nums, mid + 1, hi, target);
     }
 
     public static void main(String[] args) {
         int[] a = {4, 5, 9, 11, 15};
-        System.out.println(bs(a, 4, 0, a.length - 1));
+        System.out.println(binarySearch(a, 0, 4, 18));
     }
 }
