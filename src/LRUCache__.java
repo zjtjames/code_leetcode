@@ -14,12 +14,12 @@ import java.util.HashMap;
  * head -> A -> tail
  * head -> B -> A -> tail
  */
-public class LRUCache {
+public class LRUCache__ {
     private HashMap<Integer, DeNode> map;
     int capacity;
     DeNode head, tail;
 
-    public LRUCache(int capacity) {
+    public LRUCache__(int capacity) {
         this.capacity = capacity;
         map = new HashMap<>();
         head = new DeNode(0, 0);
