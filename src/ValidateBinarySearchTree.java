@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 98. Validate Binary Search Tree
  * 验证二叉搜索树
  *
- * 思路：中序遍历
+ * 思路：法1：中序遍历  法2递归时加两个参数upper和lower 记录此结点值的上界和下界
  */
 public class ValidateBinarySearchTree {
     private ArrayList<Integer> list = new ArrayList<>();
