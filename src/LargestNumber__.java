@@ -7,8 +7,12 @@ import java.util.Comparator;
 
 /**
  * 179. Largest Number
+ * Input: [3,30,34,5,9]
+ * Output: "9534330"
+ *
+ * 思路： 用o1+o2与o2+o1 compareTo是精髓
  */
-public class LargestNumber {
+public class LargestNumber__ {
     public static String largestNumber(int[] nums) {
         String result = "";
         if (nums == null || nums.length < 1) return result;
