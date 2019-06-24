@@ -24,7 +24,7 @@ public class LargestNumber {
                 return str2.compareTo(str1); // 降序
             }
         });
-        if (strings.get(0) == "0") return "0";
+        if (strings.get(0).equals("0")) return "0";
         for (String str : strings) result += str;
         return result;
     }
@@ -32,9 +32,13 @@ public class LargestNumber {
     public static void main(String[] args) {
         int[] nums = {0, 0};
         ArrayList<String> strings = new ArrayList<>();
+        ArrayList<Integer> integers = new ArrayList<>();
         for (int num : nums) {
             strings.add(String.valueOf(num));
+            integers.add(num);
         }
         System.out.println(strings.get(0) == "0");
+        System.out.println("00".compareTo("1"));
+        System.out.println(integers.get(0) == 0);
     }
 }
