@@ -14,7 +14,7 @@ import java.util.HashSet;
  * 思路：用HashSet把找数字的时间从o(n)降到o(1)
  * 当一个数字在set中找不到比它小1的数字时，说明它是一个连续序列的起始，只为这种数字做遍历
  */
-public class LongestConsecutiveSequence {
+public class LongestConsecutiveSequence__ {
     public int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
         for(int num : nums) set.add(num);
