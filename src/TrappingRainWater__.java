@@ -8,6 +8,7 @@
  *
  * 思路：双指针法，一个从左往右，一个从右往左 O(n) O(1)
  * 假设从左往右开始走，只有右边最高处比左边最高处高，那么此指针处能储水量就与右边无关
+ * 一旦发现左边最高处比右边最高处高了，立刻开始从右往左走
  */
 public class TrappingRainWater__ {
     public int trap(int[] height) {
