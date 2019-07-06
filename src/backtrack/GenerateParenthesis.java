@@ -33,7 +33,15 @@ public class GenerateParenthesis {
             result.add(cur);
             return;
         }
-        if()
+        if(open < n){
+            backtrack(result, cur + "(", open + 1, close, n);
+        }
+        if(close < open){
+            backtrack(result, cur + ")", open, close + 1, n);
+        }
+    }
 
+    public static void main(String[] args) {
+//        System.out.println(generateParenthesis(3));
     }
 }
