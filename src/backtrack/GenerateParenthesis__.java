@@ -21,7 +21,7 @@ import java.util.List;
  * 总结：回溯法的backtrack递归函数的参数，要根据问题的限制条件来自定义，参数体现问题的限制条件
  * generate类的题（即生成某东西），都是回溯法
  */
-public class GenerateParenthesis {
+public class GenerateParenthesis__ {
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
         backtrack(result, "", 0, 0, n);
