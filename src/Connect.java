@@ -6,24 +6,19 @@
  * 116. Populating Next Right Pointers in Each Node
  * 给完美二叉树加一个next指针，指向它同一高度右边的结点
  *
- * 思路：仿遍历的递归
+ * 思路：仿前序遍历的递归
  */
 public class Connect {
     public Node connect(Node root) {
-        if(root == null){
-            return root;
+        if(root == null) return null;
+        if(root.left != null){
+            root.left.next = root.right;
+            if(root.next != null){
+                root.right.next = root.next.left;
+            }
         }
-        Node left = root.left;
-        Node right = root.right;
-        if(left == null){
-            return root;
-        }
-        left.next = right;
-        if(root.next != null){
-            right.next = root.next.left;
-        }
-        connect(left);
-        connect(right);
+        connect(root.left);
+        connect(root.right);
         return root;
     }
 

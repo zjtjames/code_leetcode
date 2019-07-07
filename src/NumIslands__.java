@@ -27,7 +27,7 @@
 
  Output: 3
  *
- * 用DFS把相连的成一体的都标成0
+ * 思路：用DFS把相连的成一体的1都标成0
  */
 public class NumIslands__ {
     private int m;
