@@ -11,6 +11,7 @@
  * 发现一个数在下降区间（比右边大），说明峰值在他左边（含自身）
  * 最后停止的时候 lo=hi就停在峰值处
  */
+
 public class FindPeakElement__ {
     public int findPeakElement(int[] nums) {
         int lo = 0;
