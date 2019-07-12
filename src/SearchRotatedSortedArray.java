@@ -6,10 +6,11 @@ import java.util.Arrays;
 
 /**
  * 33. Search in Rotated Sorted Array
+ * 搜索旋转排序数组
  * Input: nums = [4,5,6,7,0,1,2], target = 0
  * Output: 4
  *
- * 思路：先用二分查找的方法找到旋转点 在做两次二分查找
+ * 思路：先用二分查找的方法找到旋转点 再做两次二分查找
  * 一定要记住 java自带的bs hi是exclusive的 若没查到 返回的是应插入的位置
  */
 public class SearchRotatedSortedArray {
