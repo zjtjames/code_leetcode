@@ -31,7 +31,7 @@ public class PalindromePartition__ {
         if(start == s.length()){
             result.add(new ArrayList<>(tempList)); // 万分注意 此处一定要用深复制 否则因为回溯 tempList的元素都被删掉了 最后result里全是空list
         }else {
-            for(int i = start; i < s.length(); i++){
+            for(int i = start; i < s.length(); i++){ // 这个循环是关键点
                 if(isPalindrome(s, start, i)){
                     tempList.add(s.substring(start, i + 1));
                     backtrack(result, tempList, s, i + 1);
@@ -50,4 +50,8 @@ public class PalindromePartition__ {
         return true;
     }
 
+    public static void main(String[] args) {
+        String s = "abaa";
+        System.out.println(new PalindromePartition__().partition(s));
+    }
 }
