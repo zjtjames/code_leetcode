@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 /**
- * 380. Insert Delete GetRandom O(1)
+ * 380. Insert Delete GetRandom O(1) 常数时间插入、删除和获取随机元素
  *
  * 用List存数字，用map存位置
  * 注意：list.set(0,2)是替换指定位置上的元素，list长度不变
@@ -28,7 +28,7 @@ public class RandomizedSet {
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     public boolean insert(int val) {
         boolean contain = locs.containsKey(val);
-        if(contain == false){
+        if(!contain){
             vals.add(val);
             locs.put(val, vals.size() - 1);
             return true;
@@ -40,11 +40,12 @@ public class RandomizedSet {
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
         boolean contain = locs.containsKey(val);
-        if(contain == false){
+        if(!contain){
             return false;
         }
         int loc = locs.get(val);
         // 不是list中最后一个元素,则交换val与最后一个元素的位置，更新map
+        // 如果不这样做 就要改变locs中的很多元素 就不是O(1)了
         if(loc != vals.size() - 1){
             int lastVal = vals.get(vals.size() - 1);
             vals.set(loc, lastVal);

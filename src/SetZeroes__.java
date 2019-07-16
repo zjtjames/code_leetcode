@@ -3,7 +3,9 @@
  */
 
 /**
- * 73. Set Matrix Zeroes 要求 Time Complexity : O(M×N)  Space Complexity : O(1)
+ * 73. Set Matrix Zeroes 矩阵置零
+ * 给定一个 m x n 的矩阵，如果一个元素为 0，则将其所在行和列的所有元素都设为 0。请使用原地算法。
+ * 要求 Time Complexity : O(M×N)  Space Complexity : O(1)
  *
  * 利用第一行和第一列当flag 走两遍 第一遍定flag 第二遍根据flag设0
  */

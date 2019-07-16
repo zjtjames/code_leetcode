@@ -20,11 +20,11 @@ public class TitleToNumber {
     public int titleToNumber(String s) {
         char[] chars = s.toCharArray();
         int len = s.length();// 一定要注意 字符串的length方法加括号
-        double result = 0.0;
+        int result = 0;
         for (int i = 0; i < len; i++) {
-            result += numberOfChar(chars[i]) * Math.pow(26, len - i - 1);
+            result = 26 * result + numberOfChar(s.charAt(i));
         }
-        return (int) result;
+        return result;
     }
 
     private int numberOfChar(char c) {

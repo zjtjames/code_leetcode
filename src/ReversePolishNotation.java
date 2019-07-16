@@ -6,6 +6,9 @@ import java.util.Stack;
 
 /**
  * 150. Evaluate Reverse Polish Notation 后缀表达式求值
+ * 输入: ["2", "1", "+", "3", "*"]
+ * 输出: 9
+ * 解释: ((2 + 1) * 3) = 9
  *
  * 思路：用栈 遇到数字push 遇到运算符pop
  */

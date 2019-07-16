@@ -3,8 +3,13 @@
  */
 
 /**
- * 除了自己之外的数字的乘积 238. Product of Array Except Self
+ * 238. Product of Array Except Self 除了自己之外的数字的乘积
+ * 输入: [1,2,3,4]
+ * 输出: [24,12,8,6]
+ * 说明: 请不要使用除法，且在 O(n) 时间复杂度内完成此题。
  * 要求 o(n)的时间复杂度和0(1)的空间复杂度 The output array does not count as extra space for the purpose of space complexity analysis.
+ *
+ * 思路：除了自己之外的数字的乘积= 自己左边的数的乘积 * 自己右边的数的乘积
  */
 public class ProductExceptSelf__ {
     public int[] productExceptSelf(int[] nums) {

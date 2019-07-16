@@ -6,10 +6,11 @@ import base.ListNode;
 
 /**
  * 反转链表 206. Reverse Linked List
- *
+ * 输入: 1->2->3->4->5->NULL
+ * 输出: NULL<-1<-2<-3<-4<-5
  * 三指针法
  */
-public class ReverseList {
+public class ReverseList__ {
     public ListNode reverseList(ListNode head) {
         if(head == null){
             return null;
