@@ -28,7 +28,7 @@ public class UniquePaths__ {
                 }
             }
         }
-        dp[0][0] = 1;
+        dp[0][0] = 1; // 针对1行1列单独赋值
         return dp[n-1][m-1];
     }
 }
