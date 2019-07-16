@@ -26,6 +26,7 @@ public class PalindromePartition__ {
         return result;
     }
 
+    // 回文分割问题类似子集问题，因为可以不从头开始截断 所以要加一个start指针；而排列就不需要这个指针
     private void backtrack(List<List<String>> result, List<String> tempList, String s, int start){
         if(start == s.length()){
             result.add(new ArrayList<>(tempList)); // 万分注意 此处一定要用深复制 否则因为回溯 tempList的元素都被删掉了 最后result里全是空list
