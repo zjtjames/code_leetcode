@@ -10,6 +10,7 @@
  * 要求 o(n)的时间复杂度和0(1)的空间复杂度 The output array does not count as extra space for the purpose of space complexity analysis.
  *
  * 思路：除了自己之外的数字的乘积= 自己左边的数的乘积 * 自己右边的数的乘积
+ * 从左到右走一遍，再从右到左走一遍
  */
 public class ProductExceptSelf__ {
     public int[] productExceptSelf(int[] nums) {
