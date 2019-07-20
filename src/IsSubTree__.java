@@ -32,7 +32,7 @@ public class IsSubTree__ {
     // 判断两棵树是否完全相等
     private boolean equals(TreeNode x, TreeNode y) {
         if(x == null && y == null) return true;
-        else if(x == null || y == null) return false;
+        else if(x == null || y == null) return false; // 这一行可以判断出示例的那种情况 2的左儿子是0和null
         else return x.val == y.val && equals(x.left, y.left) && equals(x.right, y.right);
     }
 
