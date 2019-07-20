@@ -5,6 +5,7 @@ package base;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 单例模式的5种实现方式
@@ -51,5 +52,4 @@ public class Singleton {
             new Thread(job).start();
         }
     }
-
 }
