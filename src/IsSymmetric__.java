@@ -8,6 +8,7 @@ import base.TreeNode;
  * 101. Symmetric Tree
  *
  * 判断二叉树是不是对称 递归法和迭代法
+ * 思路：判断此树的左子树和右子树是不是对称的
  */
 public class IsSymmetric__ {
     public boolean isSymmetric(TreeNode root) {
@@ -15,9 +16,10 @@ public class IsSymmetric__ {
         return core(root.left, root.right);
     }
 
-    private boolean core(TreeNode left, TreeNode right){
-        if(left == null && right == null) return true;
-        if(left == null || right == null ) return false;
-        return left.val == right.val && core(left.left, right.right) && core(left.right, right.left);
+    // 判断两个二叉树是不是对称的
+    private boolean core(TreeNode x, TreeNode y){
+        if(x == null && y == null) return true;
+        if(x == null || y == null ) return false;
+        return x.val == y.val && core(x.left, y.right) && core(x.right, y.left);
     }
 }
