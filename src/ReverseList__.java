@@ -8,7 +8,9 @@ import base.ListNode;
  * 反转链表 206. Reverse Linked List
  * 输入: 1->2->3->4->5->NULL
  * 输出: NULL<-1<-2<-3<-4<-5
- * 三指针法
+ *
+ * 要点：三个指针 一个指向当前节点，一个指向前一个，一个提前保存后一个节点，防止链表断裂
+ * if判断设置新头是易漏点
  */
 public class ReverseList__ {
     public ListNode reverseList(ListNode head) {
@@ -20,7 +22,7 @@ public class ReverseList__ {
         ListNode node = head;
         ListNode newHead = null;
         while(node != null){
-            if(node.next == null){
+            if(node.next == null){ // 这个if判断设置新头是易漏点
                 newHead = node;
             }
             next = node.next;
