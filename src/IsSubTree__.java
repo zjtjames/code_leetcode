@@ -25,19 +25,15 @@ import base.TreeNode;
  返回 false。
  */
 public class IsSubTree__ {
-    public boolean isSubtree(TreeNode s, TreeNode t) {
-        return traverse(s, t);
+    public boolean isSubtree(TreeNode root1, TreeNode root2) {
+        if(root1 == null || root2 == null) return false;
+        return isSame(root1, root2) || isSubtree(root1.left, root2) || isSubtree(root1.right, root2);
     }
 
     // 判断两棵树是否完全相等
-    private boolean equals(TreeNode x, TreeNode y) {
+    private boolean isSame(TreeNode x, TreeNode y) {
         if(x == null && y == null) return true;
-        else if(x == null || y == null) return false; // 这一行可以判断出示例的那种情况 2的左儿子是0和null
-        else return x.val == y.val && equals(x.left, y.left) && equals(x.right, y.right);
-    }
-
-    // 遍历s树 直到找到子树或s树为null了
-    private boolean traverse(TreeNode s, TreeNode t) {
-        return s != null && (equals(s, t) || traverse(s.left, t) || traverse(s.right, t));
+        if(x == null || y == null) return false; // x和y没有同时遍历完 说明不是子树
+        return x.val == y.val && isSame(x.left, y.left) && isSame(x.right, y.right);
     }
 }
