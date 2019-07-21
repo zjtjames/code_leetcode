@@ -9,7 +9,7 @@ import base.TreeNode;
  *
  * 判断二叉树是不是对称 递归法和迭代法
  */
-public class IsSymmetric {
+public class IsSymmetric__ {
     public boolean isSymmetric(TreeNode root) {
         if(root == null) return true;
         return core(root.left, root.right);
@@ -17,7 +17,7 @@ public class IsSymmetric {
 
     private boolean core(TreeNode left, TreeNode right){
         if(left == null && right == null) return true;
-        if(left == null || right == null || left.val != right.val) return false;
-        return core(left.left, right.right) && core(left.right, right.left);
+        if(left == null || right == null ) return false;
+        return left.val == right.val && core(left.left, right.right) && core(left.right, right.left);
     }
 }
