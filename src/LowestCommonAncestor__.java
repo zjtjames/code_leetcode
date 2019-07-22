@@ -18,7 +18,7 @@ public class LowestCommonAncestor__ {
     }
 
     private boolean findPOrQ(TreeNode node, TreeNode p, TreeNode q){
-        if(node != null){
+        if(node != null){ // 遍历二叉树要注意结点不为空
             boolean itself = node.val == p.val || node.val == q.val;
             boolean left = findPOrQ(node.left, p, q);
             boolean right = findPOrQ(node.right, p, q);
