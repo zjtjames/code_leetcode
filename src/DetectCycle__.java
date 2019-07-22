@@ -11,25 +11,20 @@ import base.ListNode;
  */
 public class DetectCycle__ {
     public ListNode detectCycle(ListNode head) {
-        ListNode slow = head;
+        if(head == null) return null;
         ListNode quick = head;
-        boolean isCycle = false;
-        while(quick != null && quick.next != null){
+        ListNode slow = head;
+        while(true){
+            if(quick == null || quick.next == null) return null;
             quick = quick.next.next;
             slow = slow.next;
-            if(quick == slow){
-                isCycle = true;
-                break;
-            }
-        }
-        if(!isCycle){
-            return null;
+            if(quick == slow) break;
         }
         quick = head;
         while(quick != slow){
             quick = quick.next;
             slow = slow.next;
         }
-        return quick;
+        return slow;
     }
 }
