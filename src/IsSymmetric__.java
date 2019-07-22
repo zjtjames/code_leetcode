@@ -13,13 +13,13 @@ import base.TreeNode;
 public class IsSymmetric__ {
     public boolean isSymmetric(TreeNode root) {
         if(root == null) return true;
-        return core(root.left, root.right);
+        return symmetric(root.left, root.right);
     }
 
     // 判断两个二叉树是不是对称的
-    private boolean core(TreeNode x, TreeNode y){
+    private boolean symmetric(TreeNode x, TreeNode y){
         if(x == null && y == null) return true;
         if(x == null || y == null ) return false;
-        return x.val == y.val && core(x.left, y.right) && core(x.right, y.left);
+        return x.val == y.val && symmetric(x.left, y.right) && symmetric(x.right, y.left);
     }
 }
