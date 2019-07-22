@@ -29,11 +29,13 @@ public class SearchRotatedSortedArray {
     }
 
     private int findPivot(int[] nums, int lo, int hi, int last){
-        if(lo > hi) return -1;
-        int mid = (lo + hi) / 2;
-        if(nums[mid] > nums[mid + 1]) return mid;
-        else if(nums[mid] > nums[last]) return findPivot(nums, mid + 1, hi, last);
-        else return findPivot(nums, lo, mid - 1, last);
+        while(lo <= hi){
+            int mid = (lo + hi) / 2;
+            if(nums[mid] > nums[mid + 1]) return mid;
+            else if(nums[mid] > nums[last]) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return -1;
     }
 
 //    private int bs(int[] nums, int lo, int hi, int target){
