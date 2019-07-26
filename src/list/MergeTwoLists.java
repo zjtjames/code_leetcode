@@ -1,4 +1,4 @@
-/**
+package list; /**
  * created by Zheng Jiateng on 2019/5/9.
  */
 
@@ -15,8 +15,8 @@ public class MergeTwoLists {
         if(l2 == null){
             return l1;
         }
-        ListNode head = new ListNode(-1);
-        ListNode cur = head;
+        ListNode dummy = new ListNode(-1);
+        ListNode cur = dummy;
         while(l1 != null && l2 != null){
             if(l1.val < l2.val){
                 cur.next = l1;
@@ -29,6 +29,6 @@ public class MergeTwoLists {
             }
         }
         cur.next = l1 != null ? l1 : l2;
-        return head.next;
+        return dummy.next;
     }
 }
