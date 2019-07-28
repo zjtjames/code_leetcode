@@ -6,10 +6,13 @@ import java.util.Arrays;
 
 /**
  * 最长增长序列 300. Longest Increasing Subsequence
+ * Input: [10,9,2,5,3,7,101,18]
+ * Output: 4
+ * Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
  */
 public class lengthOfLIS__ {
     /**
-     * dp o(n2) dp[i]表示包含nums[i]元素的最长增长子序列的长度
+     * dp o(n^2) dp[i]表示包含nums[i]元素的最长增长子序列的长度
      */
     public static int lengthOfLIS_n2(int[] nums) {
         int len = nums.length;

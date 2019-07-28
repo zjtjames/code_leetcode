@@ -35,7 +35,7 @@ public class LRUCache__ {
         if (map.get(key) != null) {
             DeNode node = map.get(key);
             int result = node.value;
-            deleteNode(node);
+            removeNode(node);
             addToHead(node);
             return result;
         }
@@ -47,7 +47,7 @@ public class LRUCache__ {
         if (map.get(key) != null) {
             DeNode node = map.get(key);
             node.value = value;
-            deleteNode(node);
+            removeNode(node);
             addToHead(node);
         } else { // 如果key不存在 则有可能要移除最久未用元素
             DeNode node = new DeNode(key, value);
@@ -56,13 +56,13 @@ public class LRUCache__ {
                 addToHead(node);
             } else {
                 map.remove(tail.pre.key);
-                deleteNode(tail.pre);
+                removeNode(tail.pre);
                 addToHead(node);
             }
         }
     }
 
-    private void deleteNode(DeNode node) {
+    private void removeNode(DeNode node) {
         node.next.pre = node.pre;
         node.pre.next = node.next;
     }
