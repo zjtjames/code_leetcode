@@ -19,19 +19,15 @@ public class MinStack {
 
     public void push(int x) {
         stack.push(x);
-        if(stackMin.isEmpty()){
-            stackMin.push(x);
-        } else if(x <= stackMin.peek()){
-            stackMin.push(x);
-        }
+        if(stackMin.isEmpty()) stackMin.push(x); // 注意如果stackMin为空 则无条件push
+        else if(x <= stackMin.peek()) stackMin.push(x);
     }
 
     public void pop() {
-        int num = stack.pop();
-        if(num == stackMin.peek()){
+        if(stack.peek() == stackMin.peek()) {
             stackMin.pop();
         }
-
+        stack.pop();
     }
 
     public int top() {
