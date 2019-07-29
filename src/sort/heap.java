@@ -25,13 +25,13 @@ public class heap {
         }
     }
 
-    private static void sink(int[] nums, int k, int last) {
-        while (2 * k + 1 <= last) {
-            int j = 2 * k + 1;
+    private static void sink(int[] nums, int i, int last) {
+        while (2 * i + 1 <= last) {
+            int j = 2 * i + 1;
             if(j < last && nums[j] < nums[j+1]) j++; // j < length - 1这个条件不要漏
-            if(nums[k] >= nums[j]) break;
-            exchange(nums, k, j);
-            k = j; // 这一行不要忘了 交换完要继续到下一层判断是否sink() 直到最后一层
+            if(nums[i] >= nums[j]) break; // 这一行一定不能忘
+            exchange(nums, i, j);
+            i = j; // 这一行不要忘了 交换完要继续到下一层判断是否sink() 直到最后一层
         }
     }
 

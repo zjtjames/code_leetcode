@@ -18,7 +18,7 @@ public class Merge {
     }
 
     private static void sort(int[] nums, int lo, int hi) { // 重载
-        // 与二分查找很像
+        // 条件与快排一样
         if (lo < hi) {
             int mid = (lo + hi) / 2;
             sort(nums, lo, mid); // 将左半边排序
