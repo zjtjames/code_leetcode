@@ -1,4 +1,4 @@
-/**
+package Tree; /**
  * created by Zheng Jiateng on 2019/7/25.
  */
 
@@ -24,5 +24,9 @@ public class IsCompleteTree__ {
         while (!bfs.isEmpty() && bfs.peek() == null)
             bfs.poll();
         return bfs.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(2 ^ 3);
     }
 }

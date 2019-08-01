@@ -18,7 +18,7 @@ public class LongestSubstring__ {
         if(s == null || s.length() == 0){
             return 0;
         }
-        // 每次递归都算出次数数组
+        // 每次递归都算出字母频率数组
         int[] counts = new int[26];
         for(int i = 0; i < s.length(); i++){
             counts[s.charAt(i) - 'a']++;

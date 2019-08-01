@@ -39,6 +39,8 @@ public class Permutation__ {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        permute(nums);
+        List<List<Integer>> result = permute(nums);
+        System.out.println(result);
+
     }
 }
