@@ -5,7 +5,11 @@ import java.util.*;
  */
 
 /**
- * 56. Merge Intervals
+ * 56. Merge Intervals 给出一个区间的集合，请合并所有重叠的区间。
+ * 输入: [[1,3],[2,6],[8,10],[15,18]]
+ * 输出: [[1,6],[8,10],[15,18]]
+ * 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+ *  c
  * 先用每个interval的起始点对二维数组进行排序
  * 然后遍历 当新来的interval的起点大于merged中最后一个interval的终点时，二者不重叠，merged加入新interval
  * 否则 二者重叠 merged中最后一个interval的终点更新为二者终点之间较大者

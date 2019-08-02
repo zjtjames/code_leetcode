@@ -3,7 +3,7 @@
  */
 
 /**
- * 找出一组数字序列中出现次数大于总数1/2的数字 169. Majority Element
+ * 169. Majority Element 找出一组数字序列中出现次数大于总数1/2的数字
  * 假设数组非空 且 majority element一定存在 The majority element is the element that appears more than ⌊ n/2 ⌋ times.
  *
  * 摩尔投票法
