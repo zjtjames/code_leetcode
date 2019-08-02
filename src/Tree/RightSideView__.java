@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class RightSideView__ {
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         rightView(root, result, 0);
         return result;
     }
