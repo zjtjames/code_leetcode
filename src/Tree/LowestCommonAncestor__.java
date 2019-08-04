@@ -9,7 +9,7 @@ import base.TreeNode;
 /**
  * 236. Lowest Common Ancestor of a Binary Tree 最低公共祖先
  * 时间、空间复杂度都是o(n)
- * 思路：递归遍历二叉树 最低公共祖先必须是根结点或左子树有p或q中的一个，右子树有另一个
+ * 思路：递归遍历二叉树 最低公共祖先必须是根结点或左子树有p或q中的一个，右子树有另一个 否则就不是最低的
  */
 public class LowestCommonAncestor__ {
     private TreeNode result;

@@ -5,7 +5,7 @@ package string; /**
 import java.util.HashMap;
 
 /**
- * 3. Longest Substring Without Repeating Characters
+ * 3. Longest Substring Without Repeating Characters 无重复字符的最长子串
  * Input: "abcabcbb"
  * Output: 3
  * Explanation: The answer is "abc", with the length of 3.

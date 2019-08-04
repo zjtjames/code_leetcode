@@ -3,15 +3,14 @@ package string; /**
  */
 
 /**
- * 395. Longest Substring with At Least K Repeating Characters
- * Find the length of the longest substring T of a given string (consists of lowercase letters only)
- * such that every character in T appears no less than k times.
+ * 395. 至少有K个重复字符的最长子串
+ * 找到给定字符串（由小写字符组成）中的最长子串 T ， 要求 T 中的每一字符出现次数都不少于 k 。输出 T 的长度。
  * s = "aaabb", k = 3
  * Output:
  * 3
  * The longest substring is "aaa", as 'a' is repeated 3 times.
  *
- * 思路：acabbdd 2 从总次数小于k的字母处截断， 因为包含此字母一定满足要求，所以此字母前后的子串不能相连，要跳过此字母
+ * 思路：acabbdd 2 从总次数小于k的字母处截断， 因为包含此字母一定不满足要求，所以此字母前后的子串不能相连，要跳过此字母
  */
 public class LongestSubstring__ {
     public int longestSubstring(String s, int k) {

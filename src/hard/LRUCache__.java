@@ -12,7 +12,7 @@ import java.util.HashMap;
  * A B C D E D F
  * head -> tail
  * head -> A -> tail
- * head -> B -> A -> tail
+ * head -> B -> A -> tail 头插法
  */
 public class LRUCache__ {
     private HashMap<Integer, DeNode> map;
