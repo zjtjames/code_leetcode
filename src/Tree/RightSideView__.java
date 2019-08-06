@@ -17,20 +17,15 @@ import java.util.List;
 public class RightSideView__ {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        rightView(root, result, 0);
+        traversal(root, result, 0);
         return result;
     }
 
-    public void rightView(TreeNode curr, List<Integer> result, int currDepth){
-        if(curr == null){
-            return;
+    public void traversal(TreeNode curr, List<Integer> result, int currDepth){
+        if(curr != null){
+            if(currDepth == result.size()) result.add(curr.val);
+            traversal(curr.right, result, currDepth + 1);
+            traversal(curr.left, result, currDepth + 1);
         }
-        if(currDepth == result.size()){
-            result.add(curr.val);
-        }
-
-        rightView(curr.right, result, currDepth + 1);
-        rightView(curr.left, result, currDepth + 1);
-
     }
 }
