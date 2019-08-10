@@ -10,7 +10,7 @@ import java.util.Arrays;
  * Output: 4
  * Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
  */
-public class lengthOfLIS__ {
+public class LongestIncreasingSequence__ {
     /**
      * dp o(n^2) dp[i]表示包含nums[i]元素的最长增长子序列的长度
      */

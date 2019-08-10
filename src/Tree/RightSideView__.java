@@ -13,6 +13,7 @@ import java.util.List;
  * 不借助辅助空间的做法
  * 头条折戟
  *
+ * 关键：给先序遍历的函数中加一个depth参数
  */
 public class RightSideView__ {
     public List<Integer> rightSideView(TreeNode root) {

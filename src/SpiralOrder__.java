@@ -28,13 +28,13 @@ public class SpiralOrder__ {
         int start = 0;
         // 开始新一圈的条件是start * 2 < rows 并且 start * 2 < columns 这是精髓
         while (start * 2 < rows && start * 2 < columns) {
-            OneCircle(matrix, rows, columns, start++);
+            oneCircle(matrix, rows, columns, start++);
         }
         return result;
     }
 
     // 走一圈 每一步的条件要比上一步严格
-    private void OneCircle(int[][] matrix, int rows, int columns, int start) {
+    private void oneCircle(int[][] matrix, int rows, int columns, int start) {
         // 这两个值要记住 第一遍做的时候写错了
         int endX = columns - 1 - start;
         int endY = rows - 1 - start;
