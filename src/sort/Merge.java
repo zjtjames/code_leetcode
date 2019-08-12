@@ -18,7 +18,7 @@ public class Merge {
     }
 
     private static void sort(int[] nums, int lo, int hi) { // 重载
-        // 条件与快排一样
+        // 条件与快排一样 至少要有两个元素才需要排序
         if (lo < hi) {
             int mid = (lo + hi) / 2;
             sort(nums, lo, mid); // 将左半边排序

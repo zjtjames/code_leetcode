@@ -22,10 +22,7 @@ public class KthSmallestInBST {
     private void inorder(TreeNode root, int k){
         if(root != null && count < k){
             inorder(root.left, k);
-            if(count < k){
-                count++;
-                result = root.val;
-            }
+            if(++count == k) result = root.val;
             inorder(root.right, k);
         }
     }
