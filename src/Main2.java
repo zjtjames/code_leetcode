@@ -1,30 +1,24 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Main2 {
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        Scanner in = new Scanner(System.in);
 //        int n = in.nextInt();
-//        int[] nums = new int[n];
-//        for (int i = 0; i < n; i++) {
-//            nums[i] = in.nextInt();
+//        int[] years = new int[n + 2];
+//        for (int i = 1; i <= n; i++) {
+//            years[i] = in.nextInt();
 //        }
-//        System.out.println(minIncrease(nums));
-//    }
+//        int[] amount = new int[n + 2];
+//        for (int i = 1; i <= n; i++) {
+//            if (years[i] <= years[i + 1] && years[i] <= years[i - 1]) continue;
 //
-//    private static int minIncrease(int[] nums) {
-//        int lo = 0;
-//        int hi = nums.length - 1;
-//        int count = 0;
-//        while (lo < hi) {
-//            while (lo < nums.length - 1 && nums[lo] < nums[lo + 1]) lo++;
-//            if (lo < nums.length - 1 && nums[lo] >= nums[lo + 1]) {
-//                count += nums[lo] - nums[lo + 1] + 1;
-//                nums[lo + 1] = nums[lo] + 1;
-//
-//            }
-//            while (hi > 0 && nums[hi] < nums[hi - 1]) hi--;
-//            if(hi > 0 && nums[hi] >= nums[hi - 1])
 //        }
-//    }
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        map.put(2, 4);
+        map.put(3, 6);
+        map.put(1, 2);
+        System.out.println(map.lastKey());
+    }
 }
