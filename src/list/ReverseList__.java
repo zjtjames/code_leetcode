@@ -10,7 +10,7 @@ import base.ListNode;
  * 输出: NULL<-1<-2<-3<-4<-5
  *
  * 要点：三个指针 一个指向当前节点，一个指向前一个，一个提前保存后一个节点，防止链表断裂
- * if判断设置新头是易漏点
+ * 直接用head当游标
  */
 public class ReverseList__ {
     public ListNode reverseList(ListNode head) {
@@ -19,17 +19,12 @@ public class ReverseList__ {
         }
         ListNode previous = null;
         ListNode next = null;
-        ListNode node = head;
-        ListNode newHead = null;
-        while(node != null){
-            if(node.next == null){ // 这个if判断设置新头是易漏点
-                newHead = node;
-            }
-            next = node.next;
-            node.next = previous;
-            previous = node;
-            node = next;
+        while(head != null){
+            next = head.next;
+            head.next = previous;
+            previous = head;
+            head = next;
         }
-        return newHead;
+        return previous;
     }
 }
