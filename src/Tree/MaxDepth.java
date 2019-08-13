@@ -8,16 +8,18 @@ import base.TreeNode;
 
 /**
  * 树的最大深度 104.Maximum Depth of Binary Tree
+ *
+ * 迭代方式用层序遍历
  */
 public class MaxDepth {
-    public int maxDepth(TreeNode root) {
+    public int maxDepthRecursive(TreeNode root) {
         if(root == null){
             return 0;
         }
         if(root.left == null && root.right == null){
             return 1;
         } else{
-            return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+            return Math.max(maxDepthRecursive(root.left), maxDepthRecursive(root.right)) + 1;
         }
     }
 }
