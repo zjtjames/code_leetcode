@@ -6,7 +6,7 @@
  * 628. 三个数的最大乘积
  * 给定一个整型数组，元素有正有负，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
  */
-public class ThreeProduct {
+public class ThreeProduct__ {
     public int maximumProduct(int[] nums) {
         //最大三个数相乘 或最小两个数和最大一个数相乘（一正两负）
         int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE;
