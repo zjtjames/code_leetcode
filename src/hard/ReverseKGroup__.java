@@ -8,7 +8,7 @@ import base.ListNode;
 /**
  * 25. K 个一组翻转链表
  */
-public class ReverseKGroup {
+public class ReverseKGroup__ {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
