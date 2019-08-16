@@ -19,13 +19,11 @@ public class SortedArrayToBST {
     }
 
     private TreeNode core(int[] nums, int lo, int hi){
-        if(lo <= hi ){
-            int mid = (lo + hi) / 2;
-            TreeNode root = new TreeNode(nums[mid]);
-            root.left = core(nums, lo, mid - 1);
-            root.right = core(nums, mid + 1, hi);
-            return root;
-        }
-        return null;
+        if(lo > hi ) return null;
+        int mid = (lo + hi) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = core(nums, lo, mid - 1);
+        root.right = core(nums, mid + 1, hi);
+        return root;
     }
 }
