@@ -1,3 +1,5 @@
+package array;
+
 import java.util.*;
 
 /**
@@ -18,12 +20,7 @@ import java.util.*;
 public class MergeInterval__ {
     public int[][] merge(int[][] intervals) {
         if (intervals.length < 1) return intervals;
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return Integer.valueOf(o1[0]).compareTo(Integer.valueOf(o2[0])); // 要转化成包装类型才能用compareTo函数
-            }
-        });
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
         int[][] merged = new int[intervals.length][intervals[0].length];
         int cur = 0; // 这个游标是精髓
         for (int[] interval : intervals) {
