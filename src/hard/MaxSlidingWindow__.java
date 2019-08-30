@@ -20,7 +20,7 @@ import java.util.LinkedList;
  * 1  3  -1  -3 [5  3  6] 7       6
  * 1  3  -1  -3  5 [3  6  7]      7
  *
- * 思路：用双向队列建立单调队列, 将从队列中找最大值的时间复杂度从o(k)降为o(1)
+ * 思路：用双向队列建立单调递减队列, 将从队列中找最大值的时间复杂度从o(k)降为o(1)
  * 队列中存数组的索引
  * 每当要新加入一个数字时，清理双向队列：移除比当前元素小的所有元素，它们不可能是最大的。
  * （你可以想象，加入数字的大小代表人的体重，把前面体重不足的都压扁了，直到遇到更大的量级才停住。）
@@ -45,7 +45,7 @@ public class MaxSlidingWindow__ {
                 indexDeque.removeLast();
             }
             indexDeque.addLast(i);
-            // 判断最左边的元素是否因窗口大小该移除了
+            // 判断队首的元素是否因窗口大小该移除了
             if(i - indexDeque.getFirst() == k) indexDeque.removeFirst();
             result[cur++] = nums[indexDeque.getFirst()];
         }
