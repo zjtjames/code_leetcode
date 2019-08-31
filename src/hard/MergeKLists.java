@@ -27,18 +27,15 @@ public class MergeKLists {
         ListNode dummy = new ListNode(-1);
         ListNode cur = dummy;
         // 建立小顶堆
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>(){
-            @Override
-            public int compare(ListNode o1, ListNode o2){
-                return o1.val - o2.val;
-            }
-        });
-        for(ListNode node : lists){
-            if(node != null) pq.offer(node);
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+        for (ListNode head : lists) {
+            if (head != null) pq.offer(head);
         }
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             ListNode node = pq.poll();
-            if(node.next != null) pq.offer(node.next);
+            if (node.next != null) {
+                pq.offer(node.next);
+            }
             cur.next = node;
             cur = cur.next;
         }
