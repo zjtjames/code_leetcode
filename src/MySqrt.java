@@ -8,7 +8,7 @@
  * 二分查找的变形
  */
 
-public class MySqrt__ {
+public class MySqrt {
     public static int mySqrt(int x) {
         // 添加这个是为了防止下面出现除以0的错误
         if(x == 0){

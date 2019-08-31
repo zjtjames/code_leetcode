@@ -11,7 +11,7 @@ import base.ListNode;
  * 思路：双指针法 两指针始终相距n 第一个指针到尾时 第二个指针正好指向要移除的结点
  * 精髓是设置虚指针来简化边界条件
  */
-public class RemoveNthFromEnd__ {
+public class RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
