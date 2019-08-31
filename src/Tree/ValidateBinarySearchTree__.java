@@ -1,10 +1,9 @@
-package Tree; /**
+package Tree;
+/**
  * created by Zheng Jiateng on 2019/6/22.
  */
 
 import base.TreeNode;
-
-import java.util.ArrayList;
 
 /**
  * 98. Validate Binary Search Tree
@@ -19,17 +18,18 @@ import java.util.ArrayList;
  */
 public class ValidateBinarySearchTree__ {
     public boolean isValidBST(TreeNode root) {
-        return core(root, null, null);
+        return isBST(root, null, null);
     }
 
-    private boolean core(TreeNode root, Integer lower, Integer upper) {
-        if(root == null) return true;
+    private boolean isBST(TreeNode root, Integer lower, Integer upper) {
+        if (root == null) return true;
         int val = root.val;
+        // 自己满足上下界条件
         if (lower != null && val <= lower) return false;
         if (upper != null && val >= upper) return false;
-
-        if (!core(root.right, val, upper)) return false;
-        if (!core(root.left, lower, val)) return false;
+        // 左右儿子也是二叉搜索树
+        if (!isBST(root.left, lower, val)) return false;
+        if (!isBST(root.right, val, upper)) return false;
         return true;
     }
 }
