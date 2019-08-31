@@ -22,26 +22,23 @@ import java.util.List;
  * generate类的题（即生成某东西），都是回溯法
  */
 public class GenerateParenthesis__ {
+    private List<String> result = new ArrayList<>();
+
     public List<String> generateParenthesis(int n) {
-        List<String> result = new ArrayList<>();
-        backtrack(result, "", 0, 0, n);
+        backtrack("", 0, 0, n);
         return result;
     }
 
-    private void backtrack(List<String> result, String cur, int open, int close, int n){
+    private void backtrack(String cur, int open, int close, int n){
         if(cur.length() == 2 * n){
             result.add(cur);
             return;
         }
         if(open < n){
-            backtrack(result, cur + "(", open + 1, close, n);
+            backtrack(cur + "(", open + 1, close, n);
         }
         if(close < open){
-            backtrack(result, cur + ")", open, close + 1, n);
+            backtrack(cur + ")", open, close + 1, n);
         }
-    }
-
-    public static void main(String[] args) {
-//        System.out.println(generateParenthesis(3));
     }
 }

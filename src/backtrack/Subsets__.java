@@ -7,25 +7,26 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 子集 78. backtrack.Subsets The solution set must not contain duplicate subsets.
+ * 78.子集 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。说明：解集不能包含重复的子集。
  * Input: nums = [1,2,3]
  * Output:[[3],[1],[2],[1,2,3],[1,3],[2,3],[1,2],[]]
  * 回溯法(backtracking)的典型题 注意深复制
  */
 public class Subsets__ {
+    private List<List<Integer>> result = new ArrayList<>();
+
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(result, new ArrayList<>(), nums, 0);
+        if (nums == null || nums.length < 1) return result;
+        backtrack(nums, new ArrayList<>(), 0);
         return result;
     }
 
-    private void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums, int start){
-        result.add(new ArrayList(tempList)); // 万分注意 此处一定要用深复制 否则因为回溯 tempList的元素都被删掉了 最后result里全是空list
-        for(int i = start; i < nums.length; i++){ // 这个for循环是精髓
-            tempList.add(nums[i]);
-            backtrack(result, tempList, nums, i + 1); // 通过递归，把当前位是这个数字的所有情况都罗列完 然后回溯，即删掉当前位，进入for循环的下一个数字
-            tempList.remove(tempList.size() - 1); // 在这一步进行回溯
+    private void backtrack(int[] nums, List<Integer> list, int start) { // 记录start位置作为终止条件
+        result.add(new ArrayList<>(list));
+        for (int i = start; i < nums.length; i++) {
+            list.add(nums[i]);
+            backtrack(nums, list, i+ 1);
+            list.remove(list.size() - 1);
         }
     }
 }

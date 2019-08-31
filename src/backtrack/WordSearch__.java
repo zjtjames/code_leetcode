@@ -1,4 +1,5 @@
-package backtrack; /**
+package backtrack;
+/**
  * created by Zheng Jiateng on 2019/6/14.
  */
 
@@ -38,7 +39,7 @@ public class WordSearch__ {
     private boolean hasPathcore(char[][] board, int rows, int columns, int row, int column, String word, int pathLength) {
         if (pathLength == len) return true;
         boolean hasPath = false; // 精髓 回溯的判断依据
-        if (row >=0 && row < rows && column >=0 && column < columns && !visited[row][column] && board[row][column] == word.charAt(pathLength++)){
+        if (row >= 0 && row < rows && column >= 0 && column < columns && !visited[row][column] && board[row][column] == word.charAt(pathLength++)) {
             visited[row][column] = true;
             // 上下左右
             hasPath = hasPathcore(board, rows, columns, row - 1, column, word, pathLength) ||

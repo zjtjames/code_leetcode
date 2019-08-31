@@ -17,41 +17,32 @@ import java.util.List;
  */
 
 public class PalindromePartition__ {
+    private List<List<String>> result = new ArrayList<>();
+
     public List<List<String>> partition(String s) {
-        List<List<String>> result = new ArrayList<>();
-        if(s == null){
-            return result;
-        }
-        backtrack(result, new ArrayList<>(), s, 0);
+        if (s == null || s.length() < 1) return result;
+        backtrack(s, new ArrayList<>(), 0);
         return result;
     }
 
-    // 回文分割问题类似子集问题，因为可以不从头开始截断 所以要加一个start指针；而排列就不需要这个指针
-    private void backtrack(List<List<String>> result, List<String> tempList, String s, int start){
-        if(start == s.length()){
-            result.add(new ArrayList<>(tempList)); // 万分注意 此处一定要用深复制 否则因为回溯 tempList的元素都被删掉了 最后result里全是空list
-        }else {
-            for(int i = start; i < s.length(); i++){ // 这个循环是关键点
-                if(isPalindrome(s, start, i)){
-                    tempList.add(s.substring(start, i + 1));
-                    backtrack(result, tempList, s, i + 1);
-                    tempList.remove(tempList.size() - 1);
+    private void backtrack(String s, List<String> list, int start) {
+        if (start == s.length()) {
+            result.add(new ArrayList<>(list));
+        } else {
+            for (int i = start; i < s.length(); i++) {
+                if (isPalindrome(s, start, i)) {
+                    list.add(s.substring(start, i + 1));
+                    backtrack(s, list, i + 1);
+                    list.remove(list.size() - 1);
                 }
             }
         }
     }
 
-    private boolean isPalindrome(String s, int lo, int hi){
-        while(lo < hi){
-            if(s.charAt(lo++) != s.charAt(hi--)){
-                return false;
-            }
+    private boolean isPalindrome(String s, int lo, int hi) {
+        while (lo < hi) {
+            if (s.charAt(lo++) != s.charAt(hi--)) return false;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        String s = "abaa";
-        System.out.println(new PalindromePartition__().partition(s));
     }
 }
